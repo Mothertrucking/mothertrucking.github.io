@@ -1,0 +1,23 @@
+
+h1{
+  display: none;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(0deg, #111 0%, #333 100%);
+}
+.logo-horizontal{
+  width: 700px;
+  height: 200px;
+
+  background-image: url("../img/logo-horizontal.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
