@@ -54,8 +54,19 @@ header {
   flex: 1;
   position: relative;
 }
+@media (max-width: 1200px) {
+  header {
+    height: 500px;
+  }
+}
 header .logo-horizontal {
   margin-top: -300px;
+}
+@media (max-width: 1200px) {
+  header .logo-horizontal {
+    margin-top: 0;
+    margin: 32px;
+  }
 }
 header h2 {
   color: rgba(255, 255, 255, 0.7);
@@ -67,6 +78,11 @@ header h2 {
 header h2::after {
   content: none;
 }
+@media (max-width: 1200px) {
+  header h2 {
+    display: none;
+  }
+}
 header:after {
   content: "";
   background-image: url("../img/headermask.svg");
@@ -77,6 +93,11 @@ header:after {
   width: 1920px;
   position: absolute;
   bottom: 0;
+}
+@media (max-width: 1200px) {
+  header:after {
+    display: none;
+  }
 }
 
 .logo-horizontal {
@@ -102,6 +123,7 @@ content + content {
 .gutter-xl {
   margin-left: auto;
   margin-right: auto;
+  padding: 0 64px;
   max-width: 1200px;
 }
 .gutter-xl.isLeft {
@@ -111,9 +133,19 @@ content + content {
   display: flex;
   flex-direction: row-reverse;
 }
+@media (max-width: 1200px) {
+  .gutter-xl.isRight {
+    flex-direction: row;
+  }
+}
 .gutter-xl.isFirst {
   margin-top: -350px;
   position: relative;
+}
+@media (max-width: 1200px) {
+  .gutter-xl.isFirst {
+    margin-top: 0;
+  }
 }
 .gutter-xl .text {
   display: flex;
