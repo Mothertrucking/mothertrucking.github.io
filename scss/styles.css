@@ -1,3 +1,8 @@
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   display: none;
 }
@@ -5,15 +10,73 @@ h1 {
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 92px;
+  color: rgba(51, 51, 51, 0.25);
+}
+h2::after {
+  content: ".";
+}
+
+h3 {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #333333;
+}
+
+p {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  color: #666666;
 }
 
 header {
-  background: linear-gradient(0deg, #111 0%, #333 100%);
+  background: linear-gradient(0deg, rgba(36, 47, 53, 0.8) 0%, #242F35 100%);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
   flex: 1;
+  position: relative;
+}
+header .logo-horizontal {
+  margin-top: -300px;
+}
+header h2 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 28px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: italic;
+}
+header h2::after {
+  content: none;
+}
+header:after {
+  content: "";
+  background-image: url("../img/headermask.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  height: 460px;
+  width: 1920px;
+  position: absolute;
+  bottom: 0;
 }
 
 .logo-horizontal {
@@ -25,4 +88,134 @@ header {
   background-size: contain;
   background-position: center center;
   margin: 32px;
+}
+
+content {
+  padding: 128px 0;
+  display: block;
+}
+
+content + content {
+  background-color: #f9f9f9;
+}
+
+.gutter-xl {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+.gutter-xl.isLeft {
+  display: flex;
+}
+.gutter-xl.isRight {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.gutter-xl.isFirst {
+  margin-top: -350px;
+  position: relative;
+}
+.gutter-xl .text {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+article {
+  display: grid;
+  gap: 64px;
+  grid-template-columns: 96px 557px;
+}
+article .icn-wrap {
+  grid-column: 1/2;
+}
+article .content {
+  grid-column: 2/3;
+}
+
+footer {
+  background: linear-gradient(0deg, rgba(36, 47, 53, 0.8) 0%, #242F35 100%);
+  height: 50vh;
+}
+
+.img-ui {
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 26px;
+  position: absolute;
+}
+
+.isLeft .img-ui-composition {
+  position: relative;
+  margin-left: 100px;
+}
+.isLeft .img-ui-composition img:nth-child(2) {
+  margin-top: 157px;
+  margin-left: 224px;
+}
+.isLeft .img-ui-composition img:nth-child(3) {
+  margin-top: 410px;
+  margin-left: 125px;
+}
+@media (max-width: 1200px) {
+  .isLeft .img-ui-composition {
+    display: none;
+  }
+}
+
+.isRight .img-ui-composition {
+  position: relative;
+  margin-right: 600px;
+}
+.isRight .img-ui-composition img:nth-child(2) {
+  margin-top: 157px;
+  margin-left: 224px;
+}
+.isRight .img-ui-composition img:nth-child(3) {
+  margin-top: 410px;
+  margin-left: 125px;
+}
+@media (max-width: 1200px) {
+  .isRight .img-ui-composition {
+    display: none;
+  }
+}
+
+.animation {
+  transition: all 0.8s;
+}
+.animation.unloaded {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.animation.fromright {
+  transform: translateX(200px);
+}
+.animation.inview {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.3s;
+}
+
+.icn-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icn-wrap i {
+  font-size: 40px;
+  color: white;
+}
+
+.context-fleetmanagement .icn-wrap {
+  background-color: #1490FF;
+}
+
+.context-audit .icn-wrap {
+  background-color: #FF8A00;
+}
+
+.context-client .icn-wrap {
+  background-color: #1EB924;
 }/*# sourceMappingURL=styles.css.map */
