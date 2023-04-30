@@ -121,6 +121,7 @@ a{
     height: 100vh;
     @media (max-width: 1200px) {
         height: 500px;
+        background: linear-gradient(0deg, rgba(#242F35, 0.95) 0%, #242F35 100%);
     }
     display: flex;
     justify-content: flex-start;

@@ -109,6 +109,7 @@ header {
 @media (max-width: 1200px) {
   header {
     height: 500px;
+    background: linear-gradient(0deg, rgba(36, 47, 53, 0.95) 0%, #242F35 100%);
   }
 }
 header .content {
