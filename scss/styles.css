@@ -40,13 +40,21 @@ h3 {
   color: #333333;
 }
 
-p {
+p, a {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 40px;
   color: #666666;
+}
+
+a {
+  font-size: 18px;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .btn-cta {
@@ -142,6 +150,12 @@ header:after {
     display: none;
   }
 }
+header.closer {
+  justify-content: center;
+}
+header.closer:after {
+  content: none;
+}
 
 content {
   padding: 128px 0;
@@ -216,8 +230,25 @@ article .content {
   }
 }
 footer {
-  background: linear-gradient(0deg, rgba(36, 47, 53, 0.8) 0%, #242F35 100%);
-  height: 50vh;
+  background: linear-gradient(0deg, #242f35 0%, #242F35 100%);
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+footer * {
+  color: rgba(255, 255, 255, 0.75);
+}
+footer h3 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.row .col-3 {
+  grid-column: span 3;
 }
 
 .img-ui {
@@ -301,4 +332,14 @@ footer {
 
 .context-client .icn-wrap {
   background-color: #1EB924;
+}
+
+.col-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gap {
+  gap: 4px;
 }/*# sourceMappingURL=styles.css.map */
