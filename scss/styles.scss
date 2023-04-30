@@ -1,10 +1,23 @@
 $cl-info-500: #1490FF;
 $cl-primary-500: #FF8A00;
+$cl-primary-700: mix($cl-primary-500, black, 85);
 $cl-success-500: #1EB924;
+
+$sz-spacing-xs: 4px;
+$sz-spacing-sm: 8px;
+$sz-spacing:    16px;
+$sz-spacing-lg: 24px;
+$sz-spacing-xl: 32px;
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
-h1, h2, h3, p{
+
+*{
+    transition: all 0.3s ease-in;
+    font-family: 'Ubuntu';
+}
+
+h1, h2, h3, p, button, a{
     margin: 0;
     padding: 0;
 }
@@ -14,11 +27,11 @@ h1{
     display: none;
   }
   
-  body{
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
+body{
+margin: 0;
+padding: 0;
+overflow-x: hidden;
+}
 
 h2{
 font-family: 'Ubuntu';
@@ -52,8 +65,43 @@ p{
 }
 
 
+.btn-cta{
+    background-color: $cl-primary-500;
+    padding: $sz-spacing 64px;
+    font-size: 22px;
+    text-decoration: none;
+    //margin-top: $sz-spacing-xl;
+    color: #fff;
+    border-radius: 100px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    &:hover{
+        background-color: $cl-primary-700;
+    }
+}
+
+.logo-horizontal{
+    max-width: 700px;
+    width: 100%;
+    height: 200px;
+    display: block;
 
 
+  
+    // background-image: url("../img/logo-horizontal-colored.svg");
+    background-image: url("../img/logo-horizontal.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+
+    background-origin: content-box;
+  
+    padding: 32px;
+    position: relative;
+  }
 
 
   header{
@@ -63,24 +111,40 @@ p{
         height: 500px;
     }
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     text-align: center;
     flex: 1;
     position: relative;
-    .logo-horizontal{
-        margin-top: -300px;
+    padding: 32px;
+    .content{
+        max-width: 700px;
+        width: 100%;
+        padding-top: 100px;
+        gap: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
         @media (max-width: 1200px) {
-            margin-top: 0;
-            margin: 32px;
+            gap: 0px;
+        }
+        
+    }
+    .logo-horizontal{
+        @media (max-width: 1200px) {
+            //margin-top: 0;
+            //margin: 32px;
         }
     }
     h2{
         color: rgba(#fff, 0.7);
-        font-size: 28px;
+        font-size: 24px;
         line-height: 1.5;
         font-weight: 400;
+
         font-style: italic;
         &::after{
             content: none;
@@ -105,18 +169,7 @@ p{
     }
   }
 
-  .logo-horizontal{
-    max-width: 700px;
-    width: 100%;
-    height: 200px;
-  
-    background-image: url("../img/logo-horizontal-colored.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-  
-    margin: 32px;
-  }
+
 
 content{
     padding: 128px 0;
@@ -299,5 +352,6 @@ footer{
 .context-client .icn-wrap{
     background-color: $cl-success-500;
 }
+
 
 
