@@ -73,6 +73,12 @@ a:hover {
 .btn-cta:hover {
   background-color: #d97500;
 }
+@media (max-width: 1200px) {
+  .btn-cta {
+    font-size: 20px;
+    padding: 16px 32px;
+  }
+}
 
 .logo-horizontal {
   max-width: 700px;

@@ -89,6 +89,10 @@ a{
     &:hover{
         background-color: $cl-primary-700;
     }
+    @media (max-width: 1200px) {
+        font-size: 20px;
+        padding: $sz-spacing 32px;
+    }
 }
 
 .logo-horizontal{
