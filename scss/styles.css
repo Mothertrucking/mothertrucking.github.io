@@ -250,6 +250,11 @@ footer h3 {
 .row .col-3 {
   grid-column: span 3;
 }
+@media (max-width: 1200px) {
+  .row .col-3 {
+    grid-column: span 12;
+  }
+}
 
 .img-ui {
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.25);

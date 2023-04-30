@@ -286,6 +286,9 @@ footer{
     
     .col-3{
         grid-column:  span 3;
+        @media (max-width: 1200px) {
+            grid-column:  span 12;
+        }
     }
 }
 
