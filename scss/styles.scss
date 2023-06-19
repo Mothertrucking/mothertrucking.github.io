@@ -119,8 +119,10 @@ a{
   header{
     background: linear-gradient(0deg, rgba(#242F35, 0.8) 0%, #242F35 100%);
     height: 100vh;
+    min-height: 800px;
     @media (max-width: 1200px) {
         height: 500px;
+        min-height: 500px;
         background: linear-gradient(0deg, rgba(#242F35, 0.95) 0%, #242F35 100%);
     }
     display: flex;
