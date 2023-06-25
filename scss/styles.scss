@@ -1,13 +1,17 @@
-$cl-info-500: #1490FF;
-$cl-primary-500: #FF8A00;
-$cl-primary-700: mix($cl-primary-500, black, 85);
-$cl-success-500: #1EB924;
+$cl-info-500    : #1490FF;
+$cl-primary-500 : #FF8A00;
+$cl-primary-700 : mix($cl-primary-500, black, 85);
+$cl-success-500 : #1EB924;
 
-$sz-spacing-xs: 4px;
-$sz-spacing-sm: 8px;
-$sz-spacing:    16px;
-$sz-spacing-lg: 24px;
-$sz-spacing-xl: 32px;
+$cl-dark-500 : #242F35;
+$cl-dark-300 : mix($cl-dark-500, white, 85);
+$cl-dark-700 : mix($cl-dark-500, black, 85);
+
+$sz-spacing-xs  : 4px;
+$sz-spacing-sm  : 8px;
+$sz-spacing     : 16px;
+$sz-spacing-lg  : 24px;
+$sz-spacing-xl  : 32px;
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
@@ -117,13 +121,13 @@ a{
 
 
   header{
-    background: linear-gradient(0deg, rgba(#242F35, 0.8) 0%, #242F35 100%);
+    background: linear-gradient(0deg, rgba($cl-dark-500, 0.8) 0%, $cl-dark-500 100%);
     height: 100vh;
     min-height: 800px;
     @media (max-width: 1200px) {
         height: 500px;
         min-height: 500px;
-        background: linear-gradient(0deg, rgba(#242F35, 0.95) 0%, #242F35 100%);
+        background: linear-gradient(0deg, rgba($cl-dark-500, 0.95) 0%, $cl-dark-500 100%);
     }
     display: flex;
     justify-content: flex-start;
@@ -273,7 +277,7 @@ article{
 }
 
 footer{
-    background: linear-gradient(0deg, rgba(#242F35, 1) 0%, #242F35 100%);
+    background: linear-gradient(0deg, rgba($cl-dark-500, 1) 0%, $cl-dark-500 100%);
     min-height: 50vh;
     display: flex;
     flex-direction: column;
@@ -419,5 +423,34 @@ nav{
     .login{
         color: white;
         padding: 10px 24px;
+    }
+}
+
+.supportedby{
+    background-color: $cl-dark-300;
+
+    h1{
+        display: block;
+        color: #fff;
+        text-align: center;
+        margin-bottom: $sz-spacing-xl;
+    }
+
+}
+
+.image-wrap{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 64px 400px;
+    justify-content: center;
+
+    width: calc(100%);
+    max-width: 1400px;
+    margin: 0 auto;
+    //padding: 0 64px;
+
+    img{
+        width: 200px;
     }
 }

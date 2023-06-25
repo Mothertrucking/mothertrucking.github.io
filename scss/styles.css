@@ -369,4 +369,28 @@ nav {
 nav .login {
   color: white;
   padding: 10px 24px;
+}
+
+.supportedby {
+  background-color: #454e53;
+}
+.supportedby h1 {
+  display: block;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.image-wrap {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 64px 400px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.image-wrap img {
+  width: 200px;
 }/*# sourceMappingURL=styles.css.map */
