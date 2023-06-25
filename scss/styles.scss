@@ -407,3 +407,17 @@ footer{
 .gap{
     gap: $sz-spacing-xs;
 }
+
+nav{
+    position: absolute;
+    top: 0;
+    z-index: 80;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .login{
+        color: white;
+        padding: 10px 24px;
+    }
+}
