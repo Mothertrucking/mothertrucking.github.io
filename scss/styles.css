@@ -40,7 +40,7 @@ h3 {
   color: #333333;
 }
 
-p, a {
+p, a, span {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 400;
@@ -55,6 +55,10 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+.label {
+  font-weight: 600;
 }
 
 .btn-cta {
@@ -238,6 +242,23 @@ article .content {
     grid-column: 2/3;
   }
 }
+article.context-award {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 557px;
+  grid-template-rows: 160px 1fr;
+}
+article.context-award .icn-wrap {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  width: 100%;
+  height: 100%;
+}
+article.context-award .content {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
 footer {
   background: linear-gradient(0deg, #242f35 0%, #242F35 100%);
   min-height: 50vh;
@@ -371,14 +392,66 @@ nav .login {
   padding: 10px 24px;
 }
 
-.supportedby {
-  background-color: #454e53;
+.awards-wrap {
+  background-color: #fff;
 }
-.supportedby h1 {
+.awards-wrap .icn-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.awards-wrap .img-wrap {
+  border-radius: 240px;
+  height: 160px;
+  width: 160px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #FFC555, #DB8E34);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  margin-left: -80px;
+  z-index: 1;
+}
+.awards-wrap .img-wrap::before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 136px;
+  height: 136px;
+  border-radius: 240px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.awards-wrap .img-wrap:first-child {
+  margin-left: 0;
+}
+.awards-wrap .img-wrap img {
+  z-index: 2;
+  width: 90px;
+  height: 90px;
+}
+
+.awards-wrap h2 {
+  margin-bottom: 64px;
+}
+.awards-wrap .content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.awards-wrap .grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 133px 1fr;
+  grid-template-rows: 1fr;
+}
+.awards-wrap .grid span {
   display: block;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 32px;
+  font-size: 20px;
+  line-height: 24px;
+}
+.awards-wrap a {
+  color: #1490FF;
 }
 
 .image-wrap {
