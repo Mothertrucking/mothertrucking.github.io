@@ -73,6 +73,7 @@ a:hover {
   box-shadow: none;
   border: none;
   outline: none;
+  z-index: 80;
 }
 .btn-cta:hover {
   background-color: #d97500;

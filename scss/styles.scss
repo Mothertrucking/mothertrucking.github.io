@@ -97,6 +97,7 @@ a{
     box-shadow: none;
     border: none;
     outline: none;
+    z-index: 80;
     &:hover{
         background-color: $cl-primary-700;
     }
