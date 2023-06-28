@@ -287,7 +287,7 @@ article{
 article.context-award{
     display: grid;
     gap: 24px;
-    grid-template-columns: 557px;
+    grid-template-columns: 100%;
     grid-template-rows: 160px 1fr;
 
     .icn-wrap{
@@ -302,6 +302,11 @@ article.context-award{
     }
 }
 
+@media (min-width: 1200px) {
+    article.context-award{
+        grid-template-columns: 557px;
+    }
+}
 
 
 
@@ -529,11 +534,6 @@ $sz-award-img:    90px;
 
     }
     .grid{
-        display: grid;
-        gap: 18px;
-        grid-template-columns:  133px 1fr;
-        grid-template-rows:  1fr;
-
         span{
             display: block;
             font-size: 20px;
@@ -547,6 +547,16 @@ $sz-award-img:    90px;
     }
 }
 
+@media (min-width: 1200px) {
+    .awards-wrap article{
+        .grid{
+            display: grid;
+            gap: 18px;
+            grid-template-columns:  133px 1fr;
+            grid-template-rows:  1fr;
+        }
+    }
+}
 
 
 

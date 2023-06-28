@@ -246,7 +246,7 @@ article .content {
 article.context-award {
   display: grid;
   gap: 24px;
-  grid-template-columns: 557px;
+  grid-template-columns: 100%;
   grid-template-rows: 160px 1fr;
 }
 article.context-award .icn-wrap {
@@ -260,6 +260,11 @@ article.context-award .content {
   grid-column: 1/2;
 }
 
+@media (min-width: 1200px) {
+  article.context-award {
+    grid-template-columns: 557px;
+  }
+}
 footer {
   background: linear-gradient(0deg, #242f35 0%, #242F35 100%);
   min-height: 50vh;
@@ -440,12 +445,6 @@ nav .login {
   flex-direction: column;
   gap: 24px;
 }
-.awards-wrap .grid {
-  display: grid;
-  gap: 18px;
-  grid-template-columns: 133px 1fr;
-  grid-template-rows: 1fr;
-}
 .awards-wrap .grid span {
   display: block;
   font-size: 20px;
@@ -455,6 +454,14 @@ nav .login {
   color: #1490FF;
 }
 
+@media (min-width: 1200px) {
+  .awards-wrap article .grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 133px 1fr;
+    grid-template-rows: 1fr;
+  }
+}
 .image-wrap {
   width: 100%;
   display: grid;
