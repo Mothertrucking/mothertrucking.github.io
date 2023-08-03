@@ -2,6 +2,9 @@ $cl-info-500    : #1490FF;
 $cl-primary-500 : #FF8A00;
 $cl-primary-700 : mix($cl-primary-500, black, 85);
 $cl-success-500 : #1EB924;
+$cl-danger-500 : #D64C4C;
+$cl-text-500: #666;
+$cl-headers-500: #333;
 
 $cl-dark-500 : #242F35;
 $cl-dark-300 : mix($cl-dark-500, white, 85);
@@ -60,16 +63,16 @@ h3{
     font-weight: 700;
     font-size: 32px;
     line-height: 40px;
-    color: #333333;
+    color: $cl-headers-500;
 }
 
-p, a, span{
+p, a, span, td, th{
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 40px;
-    color: #666666;
+    color: $cl-text-500;
 }
 
 a{
@@ -110,13 +113,13 @@ a{
 .logo-horizontal{
     max-width: 700px;
     width: 100%;
-    height: 200px;
+    height: 234px;
     display: block;
 
 
   
     // background-image: url("../img/logo-horizontal-colored.svg");
-    background-image: url("../img/logo-horizontal.svg");
+    background-image: url("../img/logo-horizontal-dispatch.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -408,8 +411,8 @@ footer{
 
 
 
-  // icn wrap colors
-  .icn-wrap{
+// icn wrap colors
+.icn-wrap{
     width: 96px;
     height: 96px;
     border-radius: 16px;
@@ -419,6 +422,13 @@ footer{
     i{
         font-size: 40px;
         color: white;
+    }
+
+    &.icn-success{
+        background-color: $cl-success-500;
+    }
+    &.icn-danger{
+        background-color: $cl-danger-500;
     }
 }
 
@@ -432,6 +442,17 @@ footer{
 
 .context-client .icn-wrap{
     background-color: $cl-success-500;
+}
+
+.table-wrap{
+    .icn-wrap{
+        width: 32px;
+        height: 32px;
+        i{
+            font-size: 16px;
+            color: white;
+        }
+    }
 }
 
 
@@ -577,3 +598,43 @@ $sz-award-img:    90px;
         width: 200px;
     }
 }
+
+
+.table-wrap{
+    table{
+        width: 100%;
+        border-collapse: collapse;
+
+        td {
+            border-top: 1px solid rgba(#000, .1);
+            padding: 12px;
+          }
+
+        th{
+            padding: 8px;
+            font-weight: 600;
+            color: $cl-headers-500;
+        }
+    }
+    th:first-child, td:first-child {
+        max-width: 500px;
+    
+      }
+    
+      th:nth-child(2), td:nth-child(2),
+      th:nth-child(3), td:nth-child(3) {
+        width: 25%;
+    
+    
+        .icn-wrap{
+            margin: 0 auto;
+        }
+      }
+
+      tr:hover{
+        background-color: rgba(#000, .03);
+      }
+
+}
+
+
