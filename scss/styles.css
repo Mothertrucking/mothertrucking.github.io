@@ -186,6 +186,11 @@ content + content {
   padding: 0 64px;
   max-width: 1200px;
 }
+@media (max-width: 1200px) {
+  .gutter-xl {
+    padding: 0 32px;
+  }
+}
 .gutter-xl.isLeft {
   display: flex;
 }
@@ -389,6 +394,15 @@ footer h3 {
   font-size: 16px;
   color: white;
 }
+@media (max-width: 1200px) {
+  .table-wrap .icn-wrap {
+    width: 24px;
+    height: 24px;
+  }
+  .table-wrap .icn-wrap i {
+    font-size: 14px;
+  }
+}
 
 .col-left {
   display: flex;
@@ -503,6 +517,12 @@ nav .login {
   padding: 8px;
   font-weight: 600;
   color: #333;
+}
+@media (max-width: 1200px) {
+  .table-wrap table td, .table-wrap table th {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
 .table-wrap th:first-child, .table-wrap td:first-child {
   max-width: 500px;

@@ -222,6 +222,9 @@ content + content{
     margin-right: auto;
     padding: 0 64px;
     max-width: 1200px;
+    @media (max-width: 1200px) {
+        padding: 0 32px;
+    }
     
     &.isLeft{
         display: flex;
@@ -453,6 +456,15 @@ footer{
             color: white;
         }
     }
+    @media (max-width: 1200px) {
+        .icn-wrap{
+            width: 24px;
+            height: 24px;
+            i{
+                font-size: 14px;
+            }
+        }
+    }
 }
 
 
@@ -614,6 +626,12 @@ $sz-award-img:    90px;
             padding: 8px;
             font-weight: 600;
             color: $cl-headers-500;
+        }
+        @media (max-width: 1200px) {
+            td, th{
+                font-size: 12px;
+                line-height: 16px;
+            }
         }
     }
     th:first-child, td:first-child {
