@@ -310,7 +310,7 @@ article.context-award{
 
 @media (min-width: 1200px) {
     article.context-award{
-        grid-template-columns: 557px;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -656,3 +656,12 @@ $sz-award-img:    90px;
 }
 
 
+.grid-2{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 64px;
+
+    @media (min-width: 920px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
