@@ -23,6 +23,7 @@ $sz-spacing-xl  : 32px;
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
 
+
 *{
     transition: all 0.3s ease-in;
     font-family: 'Ubuntu';
@@ -111,15 +112,15 @@ a{
 }
 
 .logo-horizontal{
-    max-width: 700px;
+    max-width: 800px;
     width: 100%;
     height: 234px;
     display: block;
 
 
   
-    // background-image: url("../img/logo-horizontal-colored.svg");
-    background-image: url("../img/logo-horizontal-dispatch.svg");
+    background-image: url("../img/logo-horizontal-colored.svg");
+    background-image: url("../img/logo-horizontal-logistics.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
