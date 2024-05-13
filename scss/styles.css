@@ -144,11 +144,6 @@ header h2 {
 header h2::after {
   content: none;
 }
-@media (max-width: 1200px) {
-  header h2 {
-    display: none;
-  }
-}
 header:after {
   content: "";
   background-image: url("../img/headermask.svg");
