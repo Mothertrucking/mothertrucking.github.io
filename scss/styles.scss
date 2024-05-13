@@ -335,9 +335,16 @@ footer{
 .row{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    gap: 6px;
     
     .col-3{
         grid-column:  span 3;
+        @media (max-width: 1200px) {
+            grid-column:  span 12;
+        }
+    }
+    .col-4{
+        grid-column:  span 4;
         @media (max-width: 1200px) {
             grid-column:  span 12;
         }
@@ -474,6 +481,18 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.col-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.col-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .gap{
