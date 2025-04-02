@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      max-width: 500px;
+      width: 90%;
+      margin: 20px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .question {
+      font-size: 1.8em;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .options button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 15px;
+      font-size: 1em;
+      font-weight: 500;
+      color: #fff;
+      background-color: #007aff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .options button:hover {
+      background-color: #005bb5;
+      transform: scale(1.02);
+    }
+
+    .options button:active {
+      background-color: #004a94;
+      transform: scale(0.98);
+    }
+
+    .result {
+      font-size: 1.8em;
+      font-weight: 600;
+      color: #007aff;
+      margin-top: 20px;
+    }
+
+    .result span {
+      display: block;
+      font-size: 1.2em;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="quiz">
+      <div id="question" class="question"></div>
+      <div id="options" class="options"></div>
+    </div>
+    <div id="result" class="result" style="display: none;"></div>
+  </div>
+  <script>
+    const questions = [
+      {
+        question: "What is your preferred working style?",
+        options: ["Independent", "Collaborative", "Flexible", "Structured"],
+      },
+      {
+        question: "How do you handle client feedback?",
+        options: [
+          "I take it seriously",
+          "I prefer to stick to my vision",
+          "I adapt based on feedback",
+          "I ignore it",
+        ],
+      },
+      {
+        question: "What is your ideal project duration?",
+        options: ["Short-term", "Long-term", "Ongoing", "Project-based"],
+      },
+      {
+        question: "How do you prefer to communicate with clients?",
+        options: ["Email", "Video calls", "In-person", "Messaging apps"],
+      },
+      {
+        question: "What motivates you to take on a project?",
+        options: [
+          "Financial gain",
+          "Passion for the work",
+          "Networking opportunities",
+          "Skill development",
+        ],
+      },
+      {
+        question: "How do you prioritize your tasks?",
+        options: [
+          "By deadlines",
+          "By importance",
+          "By interest",
+          "I don't prioritize",
+        ],
+      },
+      {
+        question: "What is your approach to work-life balance?",
+        options: [
+          "I maintain a strict balance",
+          "I work whenever needed",
+          "I prioritize personal time",
+          "I struggle with balance",
+        ],
+      },
+    ];
+
+    let currentQuestionIndex = 0;
+    let answers = [];
+
+    function showQuestion() {
+      const questionElement = document.getElementById("question");
+      const optionsElement = document.getElementById("options");
+
+      // Clear previous options
+      optionsElement.innerHTML = "";
+
+      // Show current question
+      const currentQuestion = questions[currentQuestionIndex];
+      questionElement.textContent = currentQuestion.question;
+
+      // Show options
+      currentQuestion.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.onclick = () => handleAnswer(index);
+        optionsElement.appendChild(button);
+      });
+    }
+
+    function handleAnswer(answerIndex) {
+      answers.push(answerIndex);
+
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function calculateResult() {
+      const score = answers.reduce((total, answer) => total + answer, 0);
+
+      if (score <= 7) return "Fractional Leader";
+      if (score <= 14) return "Consultant";
+      if (score <= 21) return "Freelancer";
+      return "Something Else";
+    }
+
+    function showResult() {
+      const quizElement = document.getElementById("quiz");
+      const resultElement = document.getElementById("result");
+
+      quizElement.style.display = "none";
+      resultElement.style.display = "block";
+
+      const result = calculateResult();
+      resultElement.innerHTML = `Your result: <strong>${result}</strong><span>Share this result with your friends!</span>`;
+    }
+
+    // Start the quiz
+    showQuestion();
+  </script>
+</body>
+</html>
