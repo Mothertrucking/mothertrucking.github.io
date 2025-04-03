@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz App</title>
+  <title>R.O.L.E. – Reflect on Labor & Employment</title>
   <style>
     /* General Reset */
     * {
@@ -14,30 +14,69 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #1a1a1a; /* Dark background */
+      color: #fffcf3; /* Light text color for contrast */
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      flex-direction: column;
+      text-align: center;
     }
 
     .container {
-      background-color: #fff;
+      background-color: #fffcf3; /* Card background */
       max-width: 500px;
       width: 90%;
       margin: 20px;
       padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      color: #333; /* Text color inside the card */
+    }
+
+    .title {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #f06110; /* Main branding color */
+    }
+
+    .description {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .start-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1em;
+      font-weight: 600;
+      color: #fffcf3; /* Light text color */
+      background-color: #f06110; /* Main branding color */
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .start-button:hover {
+      background-color: #d3540e; /* Slightly darker shade for hover */
+      transform: scale(1.05);
+    }
+
+    .start-button:active {
+      background-color: #b9460c; /* Even darker shade for active */
+      transform: scale(0.95);
     }
 
     .question {
       font-size: 1.8em;
       font-weight: 600;
       margin-bottom: 20px;
-      color: #222;
+      color: #005046; /* Secondary branding color */
     }
 
     .options button {
@@ -47,8 +86,8 @@
       padding: 15px;
       font-size: 1em;
       font-weight: 500;
-      color: #fff;
-      background-color: #007aff;
+      color: #fffcf3; /* Light text color */
+      background-color: #005046; /* Secondary branding color */
       border: none;
       border-radius: 12px;
       cursor: pointer;
@@ -56,19 +95,19 @@
     }
 
     .options button:hover {
-      background-color: #005bb5;
+      background-color: #003d36; /* Slightly darker shade for hover */
       transform: scale(1.02);
     }
 
     .options button:active {
-      background-color: #004a94;
+      background-color: #002f29; /* Even darker shade for active */
       transform: scale(0.98);
     }
 
     .result {
       font-size: 1.8em;
       font-weight: 600;
-      color: #007aff;
+      color: #f06110; /* Main branding color */
       margin-top: 20px;
     }
 
@@ -82,7 +121,19 @@
 </head>
 <body>
   <div class="container">
-    <div id="quiz">
+    <div class="title">R.O.L.E. – Reflect on Labor & Employment</div>
+    <div class="description">
+      Not sure if you’re built for freelancing, thriving in a corporate role, or meant to be a fractional expert? Take the R.O.L.E. Quiz to uncover your ideal workstyle!<br><br>
+      This quick and insightful quiz will help you understand whether you’re best suited for:<br>
+      ✅ Freelancing – Independence, flexibility, and project-based work<br>
+      ✅ Fractional work – High-impact roles without full-time commitment<br>
+      ✅ Consulting – Guiding businesses with your expertise<br>
+      ✅ Traditional employment – Stability, teamwork, and long-term growth<br>
+      ✅ Entrepreneurship – Building something from the ground up<br><br>
+      By the end, you’ll have a clearer idea of where you fit in today’s evolving job landscape. Ready to reflect on your R.O.L.E.? Let’s go! 🚀
+    </div>
+    <button class="start-button" onclick="startQuiz()">Start Quiz</button>
+    <div id="quiz" style="display: none;">
       <div id="question" class="question"></div>
       <div id="options" class="options"></div>
     </div>
@@ -143,6 +194,13 @@
     let currentQuestionIndex = 0;
     let answers = [];
 
+    function startQuiz() {
+      document.querySelector(".start-button").style.display = "none";
+      document.querySelector(".description").style.display = "none";
+      document.getElementById("quiz").style.display = "block";
+      showQuestion();
+    }
+
     function showQuestion() {
       const questionElement = document.getElementById("question");
       const optionsElement = document.getElementById("options");
@@ -193,9 +251,6 @@
       const result = calculateResult();
       resultElement.innerHTML = `Your result: <strong>${result}</strong><span>Share this result with your friends!</span>`;
     }
-
-    // Start the quiz
-    showQuestion();
   </script>
 </body>
 </html>
