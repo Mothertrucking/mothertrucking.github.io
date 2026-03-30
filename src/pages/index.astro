@@ -1,0 +1,480 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Button from '@components/Button.astro';
+
+const partners = [
+  'Michelin',
+  'Crane Association of NZ',
+  'McLeod Cranes',
+  'Gisborne Hiabs',
+  'Lift N Shift',
+];
+---
+
+<BaseLayout
+  title="Mothertrucking Apps — Software studio for the transport sector"
+  description="We build apps for the people who keep things moving. Forged in New Zealand."
+>
+
+  <!-- ─── Hero ─────────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="/img/hero-road.jpg" alt="" aria-hidden="true" />
+    </div>
+    <div class="gutter hero__inner">
+      <div class="hero__content">
+        <img src="/img/logo-horizontal-apps.svg" alt="Mothertrucking Apps" class="hero__logo" />
+        <p class="eyebrow eyebrow--geomarqr">presents</p>
+        <h1>Geomarqr<span class="hero__dot">.</span></h1>
+        <p class="hero__sub">We built the workaround.</p>
+        <div class="hero__actions">
+          <Button href="https://geomarqr.com" target="_blank" variant="geomarqr">Visit geoMarqr.com</Button>
+        </div>
+      </div>
+      <div class="hero__phone">
+        <div class="phone-frame">
+          <img src="/img/geomarqr-icon.png" alt="Geomarqr app" class="phone-frame__icon" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Partners ─────────────────────────────────────────────────────────── -->
+  <section class="partners">
+    <div class="gutter partners__inner">
+      <span class="partners__label">Worked with</span>
+      <ul class="partners__list">
+        {partners.map(p => <li>{p}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── What we do ───────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="gutter what">
+      <div class="what__text">
+        <p class="eyebrow">NZ Forged</p>
+        <h2>Indie Studio.</h2>
+        <p>We're an indie studio. We build our own apps, own the IP, and ship them independently — no clients, no briefs, no overheads, fast swift decisions.</p>
+        <p>Think indie game studio, but for the transport sector. We find the problems worth solving and build the software to solve them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Products + Enterprise ─────────────────────────────────────────────── -->
+  <section class="section section--tinted">
+    <div class="gutter">
+      <div class="cards">
+
+        <a href="/geomarqr" class="card">
+          <p class="card__tag">Product</p>
+          <h3>Geomarqr</h3>
+          <p class="card__sub">Real-time geotagged photo reporting. Built to work when nothing else does.</p>
+          <span class="card__link">Learn more →</span>
+        </a>
+
+        <a href="/enterprise" class="card">
+          <p class="card__tag">Enterprise</p>
+          <h3>Serious problems deserve serious software.</h3>
+          <p class="card__sub">Our enterprise arm works with organisations that have complex operations and no patience for tools that don't fit.</p>
+          <span class="card__link">Learn more →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Team ────────────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="gutter">
+      <p class="eyebrow">The band</p>
+      <h2>Who we are.</h2>
+      <div class="team">
+
+        <div class="member">
+          <div class="member__avatar member__avatar--initial">J</div>
+          <div class="member__info">
+            <h3>Jason Teunissen</h3>
+            <p class="member__role">Founder · Developer</p>
+            <p>Born in NZ. Moved to Holland at 13. Studied UX design, landed at Mendix, and became the only UX MVP in the entire APAC region. Spent years consulting for ING, Vodafone, Vattenfall and others across Europe. Along the way, played in a punk band that got signed. Made a podcast. Talked with Joseph Bowie.</p>
+            <p>Then COVID hit. Every client went remote overnight. He looked around and thought — if I'm doing this from a Dutch apartment, I can do it from New Zealand. So he did. Remote work had normalised, and being in NZ turned out to be a genuine advantage — a 24/7 development cycle with European clients, powered by rapid application development tools that don't care what timezone you're in.</p>
+            <p>That, and taking a decade of Dutch directness back to a country full of interesting opportunities seemed like a fun adventure. It was.</p>
+            <p>Founded Mothertrucking literally above a truck workshop. In 2023: married, house, two companies. Classic fluffing around and finding out.</p>
+            <p>Still thinks whiteboards are better than most apps. Working on it.</p>
+          </div>
+        </div>
+
+        <div class="member">
+          <div class="member__avatar member__avatar--initial">K</div>
+          <div class="member__info">
+            <h3>Kitti Bradley</h3>
+            <p class="member__role">Co-founder · Brand & Business</p>
+            <p>The heart of the studio. Grew up around diesel engines — her parents ran a mechanic workshop, so this has always been in her blood. Before Mothertrucking, she ran a rehabilitation massage studio in Delft, next to one of Europe's top universities. Her clients were professors and leading specialists. She built a remarkable network just by being the kind of person everyone wants to talk to.</p>
+            <p>She moved to NZ, retrained as a software engineer and business analyst, and brought that same gift with her — listening to the people on the ground and actually hearing them. Twelve months into software, while recovering from mental health struggles, she walked on stage at two industry events and won three awards. Faced every demon in the room. The room didn't stand a chance.</p>
+            <p>For the last two years she's been doing exactly that at Michelin. That's also why Mothertrucking went quiet for a while. Worth it.</p>
+          </div>
+        </div>
+
+        <div class="member">
+          <div class="member__avatar member__avatar--initial">M</div>
+          <div class="member__info">
+            <h3>Michelle Allbon</h3>
+            <p class="member__role">Fractional GTM Strategist</p>
+            <p>Senior director at AppDynamics (acquired by Cisco for $3.7B) before her 30s. Now runs The Fractional Directory across NZ, Singapore, and Australia — and just signed a deal with the Singapore government. She knows how to take things to market.</p>
+          </div>
+        </div>
+
+        <div class="member member--mystery">
+          <div class="member__avatar member__avatar--mystery">?</div>
+          <div class="member__info">
+            <h3>The Mentor</h3>
+            <p class="member__role">Identity withheld · By choice</p>
+            <p>Runs a multimillion dollar crane company. Loves to tinker, always fiddling with something. Most importantly — fluffs around and finds out. We bonded over it.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Partners strip ───────────────────────────────────────────────────── -->
+  <section class="section section--tinted">
+    <div class="gutter">
+      <p class="section__label">Industry partners</p>
+      <ul class="partner-names">
+        {partners.map(p => <li>{p}</li>)}
+      </ul>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style lang="scss">
+  // ─── Hero ──────────────────────────────────────────────────────────────────
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        filter: brightness(0.35);
+      }
+    }
+
+    &__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: $sz-2xl;
+      padding-block: 140px $sz-3xl;
+
+      @media (max-width: $bp-md) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__logo {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: $sz-lg;
+    }
+
+    h1 {
+      font-size: clamp(52px, 8vw, 112px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    &__dot { color: $cl-primary-500; }
+
+    &__sub {
+      font-size: clamp(18px, 2vw, 22px);
+      color: rgba(#fff, 0.6);
+      line-height: 1.5;
+    }
+
+    &__actions {
+      display: flex;
+      gap: $sz-md;
+      flex-wrap: wrap;
+      padding-top: $sz-sm;
+    }
+
+    &__phone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: $bp-md) { display: none; }
+    }
+  }
+
+  // ─── Phone frame placeholder ────────────────────────────────────────────────
+  // Replace .phone-frame contents with a real screenshot when available
+  .phone-frame {
+    width: 260px;
+    height: 520px;
+    border-radius: 40px;
+    border: 6px solid rgba(#fff, 0.15);
+    background: rgba(#000, 0.4);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $sz-md;
+    box-shadow: 0 32px 80px rgba(#000, 0.5);
+
+    &__icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+    }
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: $cl-primary-500;
+
+    &--geomarqr { color: #B91D2D; }
+  }
+
+  // ─── Partners strip ────────────────────────────────────────────────────────
+  .partners {
+    border-bottom: 1px solid rgba(#000, 0.07);
+    padding-block: $sz-lg;
+    background: #fff;
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      gap: $sz-xl;
+      flex-wrap: wrap;
+
+      @media (max-width: $bp-md) { flex-direction: column; align-items: flex-start; gap: $sz-md; }
+    }
+
+    &__label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba($cl-text-500, 0.5);
+      white-space: nowrap;
+    }
+
+    &__list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: $sz-sm $sz-xl;
+
+      li {
+        font-size: 14px;
+        font-weight: 600;
+        color: rgba($cl-headers-500, 0.4);
+      }
+    }
+  }
+
+  // ─── Sections ──────────────────────────────────────────────────────────────
+  .section {
+    padding-block: $sz-3xl;
+    &--tinted { background: #f5f5f5; }
+  }
+
+  .section__label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba($cl-text-500, 0.5);
+    margin-bottom: $sz-xl;
+  }
+
+  // ─── What we do ────────────────────────────────────────────────────────────
+  .what {
+    &__text {
+      max-width: 620px;
+      display: flex;
+      flex-direction: column;
+      gap: $sz-lg;
+
+      h2 {
+        font-size: clamp(32px, 4vw, 52px);
+        color: $cl-headers-500;
+        letter-spacing: -0.02em;
+
+        &::after { content: none; }
+      }
+
+      p {
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.7;
+        color: $cl-text-500;
+      }
+    }
+  }
+
+  // ─── Cards ─────────────────────────────────────────────────────────────────
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $sz-lg;
+
+    @media (max-width: $bp-md) { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: $sz-sm;
+    padding: $sz-xl;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid rgba(#000, 0.07);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(#000, 0.08);
+      text-decoration: none;
+    }
+
+    &__tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: $cl-primary-500;
+    }
+
+    h3 {
+      font-size: clamp(20px, 2.2vw, 26px);
+      color: $cl-dark-500;
+      line-height: 1.2;
+    }
+
+    &__sub {
+      font-size: 15px;
+      color: $cl-text-500;
+      line-height: 1.6;
+    }
+
+    &__link {
+      margin-top: auto;
+      padding-top: $sz-md;
+      font-size: 14px;
+      font-weight: 600;
+      color: $cl-primary-500;
+    }
+  }
+
+  // ─── Team ──────────────────────────────────────────────────────────────────
+  .team {
+    display: flex;
+    flex-direction: column;
+    gap: $sz-2xl;
+    margin-top: $sz-2xl;
+  }
+
+  .member {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: $sz-xl;
+    align-items: start;
+
+    @media (max-width: $bp-md) {
+      grid-template-columns: 64px 1fr;
+      gap: $sz-md;
+    }
+
+    &__avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 700;
+      flex-shrink: 0;
+
+      @media (max-width: $bp-md) { width: 64px; height: 64px; font-size: 22px; }
+
+      &--initial {
+        background: $cl-dark-500;
+        color: rgba(#fff, 0.9);
+      }
+
+      &--mystery {
+        background: #111;
+        color: rgba(#fff, 0.15);
+        font-size: 36px;
+        border: 2px dashed rgba(#fff, 0.1);
+        letter-spacing: -2px;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: $sz-sm;
+
+      h3 { font-size: 22px; }
+
+      p { font-size: 15px; line-height: 1.6; color: $cl-text-500; }
+    }
+
+    &__role {
+      font-size: 12px !important;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: $cl-primary-500 !important;
+    }
+
+    &--mystery &__info h3 {
+      color: rgba($cl-headers-500, 0.4);
+    }
+  }
+
+  // ─── Partner names ─────────────────────────────────────────────────────────
+  .partner-names {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sz-sm $sz-2xl;
+
+    li {
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba($cl-headers-500, 0.5);
+    }
+  }
+</style>

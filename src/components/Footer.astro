@@ -1,0 +1,109 @@
+---
+const year = new Date().getFullYear();
+
+const links = [
+  { label: 'Story',      href: '/story' },
+  { label: 'Geomarqr',  href: '/geomarqr' },
+  { label: 'Enterprise', href: '/enterprise' },
+  { label: 'Merch',     href: '/merch' },
+  { label: 'Work with us', href: '/work' },
+];
+---
+
+<footer class="footer">
+  <div class="gutter footer__inner">
+
+    <div class="footer__brand">
+      <a href="/" class="footer__logo">Mothertrucking<span>Apps</span></a>
+      <p>A product studio for the transport sector.<br />Forged in New Zealand.</p>
+      <a href="mailto:hi@mothertrucking.co.nz" class="footer__email">hi@mothertrucking.co.nz</a>
+    </div>
+
+    <nav class="footer__nav">
+      {links.map(l => <a href={l.href}>{l.label}</a>)}
+    </nav>
+
+  </div>
+
+  <div class="gutter footer__legal">
+    <span>&copy; {year} Mothertrucking Apps Ltd.</span>
+    <a href="https://www.linkedin.com/company/mother-trucking-ltd/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<style lang="scss">
+  .footer {
+    background: $cl-dark-500;
+    padding-block: $sz-3xl $sz-xl;
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: $sz-2xl;
+
+      @media (max-width: $bp-md) {
+        flex-direction: column;
+        gap: $sz-xl;
+      }
+    }
+
+    &__brand {
+      display: flex;
+      flex-direction: column;
+      gap: $sz-sm;
+
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgba(#fff, 0.45);
+      }
+    }
+
+    &__logo {
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      color: #fff;
+      span { color: $cl-primary-500; }
+      &:hover { text-decoration: none; }
+    }
+
+    &__email {
+      font-size: 14px;
+      color: rgba(#fff, 0.6);
+      &:hover { color: #fff; text-decoration: none; }
+    }
+
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      gap: $sz-sm;
+      align-items: flex-end;
+
+      @media (max-width: $bp-md) { align-items: flex-start; }
+
+      a {
+        font-size: 14px;
+        color: rgba(#fff, 0.5);
+        text-decoration: none;
+        &:hover { color: #fff; }
+      }
+    }
+
+    &__legal {
+      margin-top: $sz-2xl;
+      padding-top: $sz-lg;
+      border-top: 1px solid rgba(#fff, 0.08);
+      display: flex;
+      justify-content: space-between;
+
+      span, a {
+        font-size: 13px;
+        color: rgba(#fff, 0.3);
+      }
+      a:hover { color: rgba(#fff, 0.6); text-decoration: none; }
+    }
+  }
+</style>

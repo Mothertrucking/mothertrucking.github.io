@@ -1,0 +1,78 @@
+---
+interface Props {
+  name: string;
+  tagline: string;
+  description: string;
+  href: string;
+  tag?: string;   // e.g. "Live", "Beta", "Coming soon"
+}
+
+const { name, tagline, description, href, tag } = Astro.props;
+---
+
+<a href={href} target="_blank" class="product-card">
+  {tag && <span class="product-card__tag">{tag}</span>}
+  <h3 class="product-card__name">{name}</h3>
+  <p class="product-card__tagline">{tagline}</p>
+  <p class="product-card__desc">{description}</p>
+  <span class="product-card__link">Visit site &rarr;</span>
+</a>
+
+<style lang="scss">
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    gap: $sz-sm;
+    padding: $sz-xl;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid rgba(#000, 0.08);
+    box-shadow: 0 4px 24px rgba(#000, 0.06);
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(#000, 0.12);
+      text-decoration: none;
+    }
+
+    &__tag {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 2px $sz-sm;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background-color: $cl-primary-500;
+      color: #fff;
+    }
+
+    &__name {
+      font-size: 28px;
+      color: $cl-dark-500;
+    }
+
+    &__tagline {
+      font-size: 16px;
+      font-weight: 700;
+      color: $cl-primary-500;
+    }
+
+    &__desc {
+      font-size: 16px;
+      color: $cl-text-500;
+      line-height: 1.6;
+    }
+
+    &__link {
+      margin-top: $sz-sm;
+      font-size: 14px;
+      font-weight: 700;
+      color: $cl-info-500;
+    }
+  }
+</style>

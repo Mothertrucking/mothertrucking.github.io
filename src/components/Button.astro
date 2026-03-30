@@ -1,0 +1,54 @@
+---
+interface Props {
+  href: string;
+  target?: string;
+  variant?: 'primary' | 'ghost' | 'geomarqr';
+}
+
+const { href, target, variant = 'primary' } = Astro.props;
+---
+
+<a href={href} target={target} class:list={['btn', `btn--${variant}`]}>
+  <slot />
+</a>
+
+<style lang="scss">
+  .btn {
+    display: inline-block;
+    padding: $sz-md $sz-2xl;
+    border-radius: 100px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+
+    @media (max-width: $bp-md) {
+      padding: $sz-md $sz-xl;
+    }
+
+    &:hover { text-decoration: none; }
+
+    &--primary {
+      background-color: $cl-primary-500;
+      color: #fff;
+      &:hover { background-color: $cl-primary-700; }
+    }
+
+    &--geomarqr {
+      background-color: #B91D2D;
+      color: #fff;
+      &:hover { background-color: darken(#B91D2D, 8%); }
+    }
+
+    &--ghost {
+      background-color: transparent;
+      color: rgba(#fff, 0.8);
+      border: 2px solid rgba(#fff, 0.3);
+      &:hover {
+        background-color: rgba(#fff, 0.08);
+        color: #fff;
+      }
+    }
+  }
+</style>
