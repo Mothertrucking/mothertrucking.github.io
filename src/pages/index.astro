@@ -90,18 +90,26 @@ const partners = [
   </div>
 
   <!-- ─── Team ────────────────────────────────────────────────────────────── -->
+  <section class="section section--team-header">
+    <div class="gutter team-header">
+      <p class="eyebrow">The Crew</p>
+      <h2>Heavy hitters.</h2>
+      <p class="team-header__sub">Award-winning founders, published speakers, and sector leaders — everyone on this team runs their own show.</p>
+    </div>
+  </section>
+
   <div class="team">
 
     <div class="member member--jason">
       <div class="member__content">
-        <p class="member__role">Founder · Developer</p>
+        <p class="member__role">Technical Co-founder</p>
         <h3>Jason Teunissen</h3>
       </div>
     </div>
 
     <div class="member member--kitti">
       <div class="member__content">
-        <p class="member__role">Co-founder · Brand & Business</p>
+        <p class="member__role">CEO · Co-founder</p>
         <h3>Kitti Bradley</h3>
       </div>
     </div>
@@ -426,6 +434,27 @@ const partners = [
   }
 
   // ─── Team ──────────────────────────────────────────────────────────────────
+  .section--team-header {
+    padding-block: $sz-2xl $sz-xl;
+  }
+
+  .team-header {
+    display: flex;
+    flex-direction: column;
+    gap: $sz-sm;
+
+    h2 {
+      margin: 0;
+    }
+
+    &__sub {
+      max-width: 52ch;
+      color: rgba(#fff, 0.55);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+  }
+
   .team {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -438,9 +467,21 @@ const partners = [
     position: relative;
     height: 60vh;
     min-height: 360px;
-    background-size: cover;
-    background-position: center top;
     overflow: hidden;
+
+    // Image layer — slides left on hover
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover::before {
+      transform: translateX(-12px);
+    }
 
     // Dark scrim
     &::after {
@@ -451,8 +492,8 @@ const partners = [
     }
 
     // Placeholder bg — replace with real photo per member
-    &--jason    { background-image: url('/img/Gemini_Generated_Image_6x26ei6x26ei6x26.png'); background-color: $cl-dark-700; }
-    &--kitti    { background-color: $cl-dark-500; }
+    &--jason    { background-color: $cl-dark-700; &::before { background-image: url('/img/Gemini_Generated_Image_6x26ei6x26ei6x26.png'); } }
+    &--kitti    { background-color: $cl-dark-500; &::before { background-image: url('/img/kittiAnime.png'); } }
     &--michelle { background-color: #1a2830; }
     &--mystery  { background-color: #111; }
 
