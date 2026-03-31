@@ -1,0 +1,243 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Our Story — Mothertrucking Apps"
+  description="How a NZ software studio got built on cranes, HIAB trucks, and figuring things out the hard way."
+>
+
+  <!-- ─── Page Hero ───────────────────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="gutter page-hero__inner">
+      <p class="eyebrow">Our story</p>
+      <h1>It started<br>with cranes.</h1>
+      <p class="intro">Not in a boardroom. Not with a pitch deck. We started by working alongside crane operators, HIAB specialists, and lifting companies across New Zealand — trying to understand what they actually needed.</p>
+      <p class="intro">Then we tried to build it all.</p>
+    </div>
+  </section>
+
+  <!-- ─── How we work ────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="gutter story-block">
+      <p class="eyebrow">How we work</p>
+      <h2>Fluff<br>Around.<br>Find Out.</h2>
+      <div class="story-block__body">
+        <p>The original Mother Trucking product set out to solve every problem in the lifting and shifting sector. It didn't. But it taught us which problems were real, which were hard, and which were worth a dedicated product.</p>
+        <p>That's still how we work. Build fast. Get it in front of real people. Fix the actual problem.</p>
+        <p class="aside">FAFO. NZ-polite version. Means exactly what you think it means.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Evolution ──────────────────────────────────────────────────────── -->
+  <section class="section section--tinted">
+    <div class="gutter">
+      <p class="eyebrow">The evolution</p>
+      <ul class="evolution">
+        <li class="evolution__item evolution__item--past">Fleet Management.</li>
+        <li class="evolution__item evolution__item--past">Logistics Software.</li>
+        <li class="evolution__item evolution__item--current">Apps.</li>
+      </ul>
+      <p class="evolution__note">The name follows the understanding. Each version is a more honest description of what this actually is.</p>
+    </div>
+  </section>
+
+  <!-- ─── Where we are now ───────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="gutter story-block">
+      <p class="eyebrow">Where we are now</p>
+      <h2>On the<br>front line.</h2>
+      <div class="story-block__body">
+        <p>We're a product studio. We build software for industries we understand deeply — starting with transport. Our enterprise arm, lowcode.co.nz, works with organisations like Michelin on the serious stuff.</p>
+        <p>Our products come from the same domain knowledge, built to solve the problems that survive the filter.</p>
+        <p>We're based in New Zealand. We work on the front line. That's not a marketing line — it's just where the problems are.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Awards ─────────────────────────────────────────────────────────── -->
+  <section class="section section--tinted">
+    <div class="gutter">
+      <p class="eyebrow">Recognition</p>
+      <ul class="awards">
+        <li class="award">
+          <div class="award__names">
+            <span>People's Choice Award</span>
+            <span>HTK Group te Puawai Award</span>
+          </div>
+          <p class="award__event">Electrify C1 2023 · Ministry of Awesome + Callaghan Innovation · Christchurch</p>
+        </li>
+        <li class="award">
+          <div class="award__names">
+            <span>People's Choice Award</span>
+          </div>
+          <p class="award__event">Rise Up 2023 · Soda Inc. + Callaghan Innovation · Hamilton</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style lang="scss">
+  // ─── Page Hero ─────────────────────────────────────────────────────────────
+  .page-hero {
+    background: $cl-dark-700;
+    padding-block: 160px $sz-3xl;
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: $sz-xl;
+      max-width: 800px;
+    }
+
+    h1 {
+      font-family: $font-display;
+      font-weight: 900;
+      font-size: clamp(52px, 9vw, 112px);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      color: #fff;
+
+      &::after { content: none; }
+    }
+
+    .intro {
+      font-size: clamp(16px, 1.8vw, 20px);
+      color: rgba(#fff, 0.5);
+      line-height: 1.7;
+      max-width: 540px;
+    }
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: $cl-primary-500;
+  }
+
+  // ─── Sections ──────────────────────────────────────────────────────────────
+  .section {
+    padding-block: $sz-3xl;
+    background: $cl-dark-500;
+
+    &--tinted { background: $cl-dark-700; }
+  }
+
+  // ─── Story block ───────────────────────────────────────────────────────────
+  .story-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $sz-xl $sz-3xl;
+    align-items: start;
+
+    @media (max-width: $bp-md) {
+      grid-template-columns: 1fr;
+    }
+
+    .eyebrow { grid-column: 1 / -1; }
+
+    h2 {
+      font-family: $font-display;
+      font-weight: 900;
+      font-size: clamp(40px, 5.5vw, 76px);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      color: rgba(#fff, 0.1);
+      text-transform: uppercase;
+
+      &::after { content: none; }
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: $sz-lg;
+
+      p {
+        font-size: clamp(15px, 1.5vw, 18px);
+        line-height: 1.75;
+        color: rgba(#fff, 0.5);
+      }
+    }
+  }
+
+  .aside {
+    font-size: 13px !important;
+    color: rgba(#fff, 0.2) !important;
+    font-style: italic;
+  }
+
+  // ─── Evolution ─────────────────────────────────────────────────────────────
+  .evolution {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $sz-sm;
+    margin-block: $sz-xl;
+
+    &__item {
+      font-family: $font-display;
+      font-weight: 900;
+      font-size: clamp(28px, 5vw, 64px);
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      line-height: 1.1;
+
+      &--past {
+        color: rgba(#fff, 0.1);
+        text-decoration: line-through;
+        text-decoration-color: rgba(#fff, 0.07);
+      }
+
+      &--current {
+        color: #fff;
+      }
+    }
+
+    &__note {
+      font-size: clamp(14px, 1.4vw, 17px);
+      color: rgba(#fff, 0.3);
+      line-height: 1.6;
+      max-width: 480px;
+    }
+  }
+
+  // ─── Awards ────────────────────────────────────────────────────────────────
+  .awards {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $sz-2xl;
+    margin-top: $sz-xl;
+  }
+
+  .award {
+    display: flex;
+    flex-direction: column;
+    gap: $sz-sm;
+
+    &__names {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      span {
+        font-size: clamp(18px, 2.5vw, 28px);
+        font-weight: 700;
+        color: rgba(#fff, 0.8);
+        line-height: 1.3;
+      }
+    }
+
+    &__event {
+      font-size: 13px;
+      color: rgba(#fff, 0.3);
+      letter-spacing: 0.04em;
+    }
+  }
+</style>
