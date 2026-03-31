@@ -53,36 +53,44 @@ const partners = [
   <section class="section">
     <div class="gutter what">
       <div class="what__text">
-        <p class="eyebrow">NZ Forged</p>
-        <h2>Indie Studio.</h2>
+        <div class="what__heading">
+          <p class="eyebrow">NZ Forged</p>
+          <h2>Indie Studio.</h2>
+        </div>
         <p>We're an indie studio. We build our own apps, own the IP, and ship them independently — no clients, no briefs, no overheads, fast swift decisions.</p>
         <p>Think indie game studio, but for the transport sector. We find the problems worth solving and build the software to solve them.</p>
       </div>
     </div>
   </section>
 
-  <!-- ─── Products + Enterprise ─────────────────────────────────────────────── -->
-  <section class="section section--tinted">
-    <div class="gutter">
-      <div class="cards">
+  <!-- ─── Products ────────────────────────────────────────────────────────── -->
+  <div class="products">
 
-        <a href="/geomarqr" class="card">
-          <p class="card__tag">Product</p>
-          <h3>Geomarqr</h3>
-          <p class="card__sub">Real-time geotagged photo reporting. Built to work when nothing else does.</p>
-          <span class="card__link">Learn more →</span>
-        </a>
-
-        <a href="/enterprise" class="card">
-          <p class="card__tag">Enterprise</p>
-          <h3>Serious problems deserve serious software.</h3>
-          <p class="card__sub">Our enterprise arm works with organisations that have complex operations and no patience for tools that don't fit.</p>
-          <span class="card__link">Learn more →</span>
-        </a>
-
+    <a href="https://geomarqr.com" target="_blank" class="product product--geomarqr">
+      <div class="product__content">
+        <span class="product__label">Live</span>
+        <h2 class="product__name">Geomarqr</h2>
+        <p class="product__sub">Built to work when nothing else does.</p>
       </div>
-    </div>
-  </section>
+    </a>
+
+    <a href="/tides" class="product product--tides">
+      <div class="product__content">
+        <span class="product__label">Coming soon to Geomarqr</span>
+        <h2 class="product__name">Tides</h2>
+        <p class="product__sub">Know exactly when to head out.</p>
+      </div>
+    </a>
+
+    <a href="/enterprise" class="product product--enterprise">
+      <div class="product__content">
+        <span class="product__label">Enterprise</span>
+        <h2 class="product__name">lowcode.co.nz</h2>
+        <p class="product__sub">Serious problems deserve serious software.</p>
+      </div>
+    </a>
+
+  </div>
 
   <!-- ─── Team ────────────────────────────────────────────────────────────── -->
   <section class="section">
@@ -146,6 +154,8 @@ const partners = [
       </ul>
     </div>
   </section>
+
+<script src="../scripts/parallax.js"></script>
 
 </BaseLayout>
 
@@ -318,6 +328,12 @@ const partners = [
 
   // ─── What we do ────────────────────────────────────────────────────────────
   .what {
+    &__heading {
+      display: flex;
+      flex-direction: column;
+      gap: $sz-xs;
+    }
+
     &__text {
       max-width: 620px;
       display: flex;
@@ -340,58 +356,91 @@ const partners = [
     }
   }
 
-  // ─── Cards ─────────────────────────────────────────────────────────────────
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: $sz-lg;
-
-    @media (max-width: $bp-md) { grid-template-columns: 1fr; }
-  }
-
-  .card {
+  // ─── Products (Housemarque style) ──────────────────────────────────────────
+  .products {
     display: flex;
     flex-direction: column;
-    gap: $sz-sm;
-    padding: $sz-xl;
-    border-radius: 16px;
-    background: #fff;
-    border: 1px solid rgba(#000, 0.07);
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
 
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(#000, 0.08);
-      text-decoration: none;
+  .product {
+    position: relative;
+    display: block;
+    height: 45vh;
+    min-height: 280px;
+    overflow: hidden;
+    text-decoration: none;
+
+    background-size: cover;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+
+    @media (max-width: $bp-md) { height: 30vh; }
+
+    &--geomarqr {
+      background-image: url('/img/hero-road.jpg');
     }
 
-    &__tag {
+    // TODO: replace with real imagery before launch
+    &--tides {
+      background-image: url('https://images.squarespace-cdn.com/content/v1/5bfd4f00710699387b6a460a/1739446032039-LRWR71PA4LSB118YI2TA/Guest_4.jpg?format=2500w');
+    }
+
+    &--enterprise {
+      background-image: url('https://images.squarespace-cdn.com/content/v1/5bfd4f00710699387b6a460a/1543839534570-PSLKYMHE9FIXVQ48YR9H/Marketing-Art_Final_large-1600x960.jpg?format=2500w');
+    }
+
+    // Dark scrim
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(#000, 0.55);
+      transition: background 0.5s ease;
+    }
+
+    &:hover { text-decoration: none; }
+    &:hover::after { background: rgba(#000, 0.42); }
+
+    &__content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: $sz-2xl $sz-3xl;
+      gap: $sz-sm;
+
+      @media (max-width: $bp-md) { padding: $sz-xl; }
+    }
+
+    &__label {
+      font-family: $font-body;
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: $cl-primary-500;
+      letter-spacing: 0.16em;
+      color: rgba(#fff, 0.5);
     }
 
-    h3 {
-      font-size: clamp(20px, 2.2vw, 26px);
-      color: $cl-dark-500;
-      line-height: 1.2;
+    &__name {
+      font-family: $font-display;
+      font-weight: 900;
+      font-size: clamp(32px, 5vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: #fff;
+      text-transform: uppercase;
+
+      &::after { content: none; }
     }
 
     &__sub {
-      font-size: 15px;
-      color: $cl-text-500;
-      line-height: 1.6;
-    }
-
-    &__link {
-      margin-top: auto;
-      padding-top: $sz-md;
-      font-size: 14px;
-      font-weight: 600;
-      color: $cl-primary-500;
+      font-family: $font-body;
+      font-size: clamp(14px, 1.4vw, 18px);
+      color: rgba(#fff, 0.6);
+      line-height: 1.5;
+      max-width: 480px;
     }
   }
 

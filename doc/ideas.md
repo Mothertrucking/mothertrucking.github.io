@@ -29,6 +29,9 @@ Enterprise software studio. Builds whatever gets the job done — lowcode, custo
 **Mothertrucking Apps**
 Product studio. A platform for side-projects that become real products. Like a game studio, or a band, but for apps — they own the IP. Unique network, unique insights. Born from working in the transport/lifting sector.
 
+**Tides** (micro app)
+GPS-based tide and sunshine comparison tool. Tells you the best time to go fishing, floundering, or any water sport. Simple, useful, very NZ.
+
 **geomarqr.com** (formerly RhRn — Right Here Right Now)
 First real product out of Mothertrucking Apps. Crowdsourced, real-time geotagged photo reporting — for emergency services, insurance, disaster response. The hard constraint: **it needs to work when nothing else does.** Renamed because the original name was too long and already taken.
 
