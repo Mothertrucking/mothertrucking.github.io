@@ -108,7 +108,10 @@
       "Bash(\"/c/Program Files/flutter/bin/flutter\" build web --release --web-renderer html --dart-define-from-file=.env)",
       "WebFetch(domain:pub.dev)",
       "Bash(cmd /c \"cd c:\\\\GitHub\\\\rhrn-flutter && flutter pub get && flutter analyze lib/\")",
-      "Bash(cmd /c \"cd /d c:\\\\GitHub\\\\rhrn-flutter && flutter pub get 2>&1 && flutter analyze lib/ 2>&1\")"
+      "Bash(cmd /c \"cd /d c:\\\\GitHub\\\\rhrn-flutter && flutter pub get 2>&1 && flutter analyze lib/ 2>&1\")",
+      "WebFetch(domain:flyonui.com)",
+      "WebFetch(domain:cdn.jsdelivr.net)",
+      "WebFetch(domain:mothertrucking.co.nz)"
     ]
   }
 }

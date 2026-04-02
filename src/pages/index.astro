@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Button from '@components/Button.astro';
+import { ACTION_ERROR_CODES } from 'astro:actions';
 
 const partners = [
   'Michelin',
@@ -22,27 +23,38 @@ const partners = [
       <img src="/img/hero-road.jpg" alt="" aria-hidden="true" />
     </div>
     <div class="gutter hero__inner">
-      <img src="/img/logo-horizontal-dispatch.svg" alt="Mothertrucking Apps" class="hero__logo" />
-      <p class="hero__eyebrow">presents</p>
-      <h1 class="hero__headline">geoMarqr.</h1>
-      <p class="hero__sub">Built to work when nothing else does. Real-time geotagged photo reporting for emergency services, insurance, and field workers.</p>
-      <div class="hero__actions">
-        <Button href="https://geomarqr.com" target="_blank" variant="geomarqr">Visit geoMarqr.com</Button>
+      <div class="hero__text">
+        <div class="hero__logo-lockup">
+          <img src="/img/logo-horizontal-whitesvg.svg" alt="Mothertrucking Apps" class="hero__logo" />
+          <p class="hero__eyebrow">presents</p>
+        </div>
+        <h1 class="hero__headline">geoMarqr.</h1>
+        <p class="hero__sub">Built to work when nothing else does. Real-time geotagged photo reporting for emergency services, insurance, and field workers.</p>
+        <div class="hero__actions">
+          <Button href="https://geomarqr.com" target="_blank" variant="geomarqr">Visit geoMarqr.com</Button>
+        </div>
+      </div>
+      <div class="hero__phone-col">
+        <div class="mockup-phone">
+          <div class="mockup-phone-camera"></div>
+          <div class="mockup-phone-display">
+            <div class="hero__phone-map"></div>
+            <div class="hero__phone-ui">
+              <div class="hero__phone-pin">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="hero__phone-card">
+                <span class="hero__phone-card-label">Photo tagged</span>
+                <span class="hero__phone-card-loc">-36.8485° S, 174.7633° E</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="hero__scroll" aria-hidden="true">
       <span>Scroll</span>
       <div class="hero__scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ─── Partners ─────────────────────────────────────────────────────────── -->
-  <section class="partners">
-    <div class="gutter partners__inner">
-      <span class="partners__label">Worked with</span>
-      <ul class="partners__list">
-        {partners.map(p => <li>{p}</li>)}
-      </ul>
     </div>
   </section>
 
@@ -52,10 +64,41 @@ const partners = [
       <div class="what__text">
         <div class="what__heading">
           <p class="eyebrow">NZ Forged</p>
-          <h2>Indie Studio.</h2>
+          <h2>Indie Studio</h2>
         </div>
-        <p>We're an indie studio. We build our own apps, own the IP, and ship them independently — no clients, no briefs, no overheads, fast swift decisions.</p>
-        <p>Think indie game studio, but for the transport sector. We find the problems worth solving and build the software to solve them.</p>
+        <p>We build our own apps, own the IP, and ship them independently.</br> No clients, no briefs, no overheads, fast swift decisions.</p>
+        <p>Think indie game studio, but with roots in the sector. We find the problems worth solving and build the software to solve them.</p>
+
+        <div class="what__awards">
+          <div class="what__awards-row">
+            <div class="what__award">
+              <img src="/img/wreathLeft.svg" alt="" aria-hidden="true" class="what__award-wreath what__award-wreath--left" />
+              <div class="what__award-text">
+                <span class="what__award-name">Min. of Awesome</span>
+                <span class="what__award-type">People's Choice</span>
+              </div>
+              <img src="/img/wreathLeft.svg" alt="" aria-hidden="true" class="what__award-wreath what__award-wreath--right" />
+            </div>
+            <div class="what__award">
+              <img src="/img/wreathLeft.svg" alt="" aria-hidden="true" class="what__award-wreath what__award-wreath--left" />
+              <div class="what__award-text">
+                <span class="what__award-name">Min. of Awesome</span>
+                <span class="what__award-type">Te Puawai</span>
+              </div>
+              <img src="/img/wreathLeft.svg" alt="" aria-hidden="true" class="what__award-wreath what__award-wreath--right" />
+            </div>
+          </div>
+          <div class="what__awards-row what__awards-row--center">
+            <div class="what__award">
+              <img src="/img/wreathLeft.svg" alt="" aria-hidden="true" class="what__award-wreath what__award-wreath--left" />
+              <div class="what__award-text">
+                <span class="what__award-name">Soda Inc.</span>
+                <span class="what__award-type">People's Choice</span>
+              </div>
+              <img src="/img/wreathLeft.svg" alt="" aria-hidden="true" class="what__award-wreath what__award-wreath--right" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -101,28 +144,36 @@ const partners = [
   <div class="team">
 
     <div class="member member--jason">
+      <div class="member__icon"><i class="fa-thin fa-terminal"></i></div>
       <div class="member__content">
+        <p class="member__bio">The tinkerer. The guy that gets the contraptions working. Award-winning UX and low-code leader.</p>
         <p class="member__role">Technical Co-founder</p>
         <h3>Jason Teunissen</h3>
       </div>
     </div>
 
     <div class="member member--kitti">
+      <div class="member__icon"><i class="fa-thin fa-heart"></i></div>
       <div class="member__content">
+        <p class="member__bio">The heart. She talks with everyone, makes sure every voice is heard, and keeps us moving in the right direction. Award-winning startup founder.</p>
         <p class="member__role">CEO · Co-founder</p>
         <h3>Kitti Bradley</h3>
       </div>
     </div>
 
     <div class="member member--michelle">
+      <div class="member__icon"><i class="fa-thin fa-people-group"></i></div>
       <div class="member__content">
+        <p class="member__bio">GTM strategist and fractional leader. She knows everyone, understands people deeply, and brings the network to match. Former Senior Director at a company acquired by Cisco for $3B.</p>
         <p class="member__role">Fractional GTM Strategist</p>
         <h3>Michelle Allbon</h3>
       </div>
     </div>
 
     <div class="member member--mystery">
+      <div class="member__icon"><i class="fa-thin fa-infinity"></i></div>
       <div class="member__content">
+        <p class="member__bio">Mad scientist. Tinkerer. Runs a million-dollar company and still finds time to get their hands dirty. Identity stays under wraps — for now.</p>
         <p class="member__role">Identity withheld</p>
         <h3>The Mentor</h3>
       </div>
@@ -171,17 +222,108 @@ const partners = [
     &__inner {
       position: relative;
       z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      gap: $sz-2xl;
+      padding-block: 160px 0;
+
+      @media (max-width: $bp-md) {
+        grid-template-columns: 1fr;
+        padding-block: 120px $sz-3xl;
+      }
+    }
+
+    &__text {
       display: flex;
       flex-direction: column;
       gap: $sz-xl;
-      padding-block: 160px $sz-3xl;
+      justify-content: center;
+      padding-bottom: $sz-3xl;
+    }
+
+    &__phone-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: $bp-md) { display: none; }
+    }
+
+    &__phone-map {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 60% 45%, rgba(#B91D2D, 0.15) 0%, transparent 55%),
+        linear-gradient(160deg, #0a0d14 0%, #0d1520 40%, #0a0a0e 100%);
+
+      // Subtle grid lines mimicking a map
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(#fff, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(#fff, 0.03) 1px, transparent 1px);
+        background-size: 56px 56px;
+      }
+    }
+
+    &__phone-ui {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding-top: 96px;
+    }
+
+    &__phone-pin {
+      font-size: 84px;
+      color: #B91D2D;
+      filter: drop-shadow(0 8px 32px rgba(#B91D2D, 0.6));
+      line-height: 1;
+    }
+
+    &__phone-card {
+      background: rgba(#fff, 0.06);
+      border: 1px solid rgba(#fff, 0.1);
+      border-radius: 24px;
+      padding: 20px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      backdrop-filter: blur(8px);
+      width: 80%;
+    }
+
+    &__phone-card-label {
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(#fff, 0.4);
+    }
+
+    &__phone-card-loc {
+      font-size: 22px;
+      font-weight: 600;
+      color: rgba(#fff, 0.75);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    &__logo-lockup {
+      margin-bottom: -29px;
     }
 
     &__logo {
       width: 100%;
-      max-width: 260px;
+      max-width: 365px;
       height: auto;
-      opacity: 0.85;
+      opacity: 0.6;
     }
 
     &__eyebrow {
@@ -190,6 +332,7 @@ const partners = [
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: #B91D2D;
+      margin-top: -12px;
     }
 
     &__headline {
@@ -244,6 +387,52 @@ const partners = [
     }
   }
 
+  .mockup-phone {
+    background-color: #000;
+    border: 4px solid #4e4d4d;
+    border-radius: 50px;
+    margin: 0 auto;
+    padding: 6px;
+    display: inline-block;
+    overflow: hidden;
+    width: min(320px, 100%);
+    box-shadow:
+      0 0 0 2px rgba(#fff, 0.06),
+      0 80px 160px rgba(#000, 0.9),
+      0 30px 60px rgba(#000, 0.6);
+
+    .mockup-phone-camera {
+      background: #000;
+      border-radius: 9999px;
+      width: 33%;
+      height: 25px;
+      margin: 0 auto;
+      position: relative;
+      top: 5px;
+      z-index: 10;
+
+      &::after {
+        content: "";
+        background-color: #2a292d;
+        border-radius: 5px;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 25%;
+        right: 8%;
+      }
+    }
+
+    .mockup-phone-display {
+      border-radius: 40px;
+      margin-top: -25px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 390 / 844;
+    }
+  }
+
   .eyebrow {
     font-size: 12px;
     font-weight: 700;
@@ -253,43 +442,6 @@ const partners = [
   }
 
   // ─── Partners strip ────────────────────────────────────────────────────────
-  .partners {
-    border-bottom: 1px solid rgba(#fff, 0.06);
-    padding-block: $sz-lg;
-    background: $cl-dark-700;
-
-    &__inner {
-      display: flex;
-      align-items: center;
-      gap: $sz-xl;
-      flex-wrap: wrap;
-
-      @media (max-width: $bp-md) { flex-direction: column; align-items: flex-start; gap: $sz-md; }
-    }
-
-    &__label {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(#fff, 0.25);
-      white-space: nowrap;
-    }
-
-    &__list {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: $sz-sm $sz-xl;
-
-      li {
-        font-size: 14px;
-        font-weight: 600;
-        color: rgba(#fff, 0.4);
-      }
-    }
-  }
-
   // ─── Sections ──────────────────────────────────────────────────────────────
   .section {
     padding-block: $sz-3xl;
@@ -322,6 +474,8 @@ const partners = [
 
     &__text {
       max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
       display: flex;
       flex-direction: column;
       gap: $sz-lg;
@@ -341,6 +495,59 @@ const partners = [
         font-size: clamp(16px, 1.6vw, 19px);
         line-height: 1.7;
         color: rgba(#fff, 0.55);
+      }
+    }
+
+    &__awards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $sz-lg;
+      margin-top: $sz-2xl;
+    }
+
+    &__awards-row {
+      display: flex;
+      justify-content: center;
+      gap: $sz-xl;
+    }
+
+    &__award {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &__award-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    &__award-name {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(#fff, 0.7);
+    }
+
+    &__award-type {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(#fff, 0.35);
+    }
+
+    &__award-wreath {
+      width: 24px;
+      height: auto;
+      opacity: 0.5;
+      filter: brightness(0) invert(1);
+
+      &--right {
+        transform: scaleX(-1);
       }
     }
   }
@@ -465,11 +672,11 @@ const partners = [
 
   .member {
     position: relative;
-    height: 60vh;
+    height: 80vh;
     min-height: 360px;
     overflow: hidden;
 
-    // Image layer — slides left on hover
+    // Image layer
     &::before {
       content: '';
       position: absolute;
@@ -480,7 +687,7 @@ const partners = [
     }
 
     &:hover::before {
-      transform: translateX(-12px);
+      transform: scale(1.05);
     }
 
     // Dark scrim
@@ -492,10 +699,21 @@ const partners = [
     }
 
     // Placeholder bg — replace with real photo per member
-    &--jason    { background-color: $cl-dark-700; &::before { background-image: url('/img/Gemini_Generated_Image_6x26ei6x26ei6x26.png'); } }
-    &--kitti    { background-color: $cl-dark-500; &::before { background-image: url('/img/kittiAnime.png'); } }
-    &--michelle { background-color: #1a2830; }
-    &--mystery  { background-color: #111; }
+    &--jason    { background-color: $cl-dark-700; &::before { background-image: url('/img/jasonRender.png'); } }
+    &--kitti    { background-color: $cl-dark-500; &::before { background-image: url('/img/kittiRender.png'); } }
+    &--michelle { background-color: #1a2830; &::before { background-image: url('/img/michelleRender2.png'); } }
+    &--mystery  { background-color: #111; &::before { background-image: url('/img/mentorRender.png'); } }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      font-size: 48px;
+      color: rgba(#fff, 0.9);
+      line-height: 1;
+    }
 
     &__content {
       position: absolute;
@@ -506,6 +724,26 @@ const partners = [
       justify-content: flex-end;
       padding: $sz-xl;
       gap: 4px;
+      transition: transform 0.4s ease;
+    }
+
+    &:hover &__content {
+      transform: translateY(-60px);
+    }
+
+    &__bio {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(#fff, 0.75);
+      margin-bottom: 12px;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
+    }
+
+    &:hover &__bio {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     &__role {
@@ -523,13 +761,6 @@ const partners = [
       line-height: 1.2;
     }
 
-    &--mystery h3 {
-      color: rgba(#fff, 0.25);
-    }
-
-    &--mystery &__role {
-      color: rgba(#fff, 0.2);
-    }
   }
 
   // ─── Partner names ─────────────────────────────────────────────────────────
