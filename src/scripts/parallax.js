@@ -12,7 +12,7 @@ if (products.length && window.matchMedia('(min-width: 768px)').matches) {
       // progress: 0 when bottom of panel enters viewport, 1 when top leaves
       const progress = 1 - (rect.bottom / (viewH + rect.height));
       // Shift from 20% to 70% — 50% range gives plenty of travel
-      const posY = 20 + (progress * 50);
+      const posY = 20 + (progress * 55);
       el.style.backgroundPositionY = `${posY}%`;
     });
   };

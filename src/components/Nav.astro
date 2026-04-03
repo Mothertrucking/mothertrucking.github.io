@@ -5,11 +5,8 @@ interface Props {
 const { theme = 'dark' } = Astro.props;
 
 const links = [
-  { label: 'Story',      href: '/story' },
-  { label: 'Geomarqr',  href: '/geomarqr' },
-  { label: 'Enterprise', href: '/enterprise' },
-  { label: 'Merch',     href: '/merch' },
-  { label: 'Work',      href: '/work' },
+  { label: 'Story',     href: '/story' },
+  { label: 'Geomarqr', href: 'https://geomarqr.com', target: '_blank' },
 ];
 ---
 
@@ -18,7 +15,7 @@ const links = [
     <a href="/" class="nav__logo">Mothertrucking<span>Apps</span></a>
     <ul class="nav__links">
       {links.map(l => (
-        <li><a href={l.href}>{l.label}</a></li>
+        <li><a href={l.href} target={l.target}>{l.label}</a></li>
       ))}
     </ul>
   </div>
