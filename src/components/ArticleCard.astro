@@ -1,0 +1,54 @@
+---
+interface Props {
+  icon: string;       // Font Awesome class e.g. "fa-duotone fa-truck-fast"
+  title: string;
+  body: string;
+  accent?: string;    // CSS colour for the icon background
+}
+
+const { icon, title, body, accent = 'var(--accent, #1EB924)' } = Astro.props;
+---
+
+<article class="card">
+  <div class="card__icon" style={`background-color: ${accent}`}>
+    <i class={icon}></i>
+  </div>
+  <div class="card__content">
+    <h3>{title}</h3>
+    <p>{body}</p>
+  </div>
+</article>
+
+<style lang="scss">
+  .card {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: $sz-xl;
+    align-items: start;
+
+    @media (max-width: $bp-md) {
+      grid-template-columns: 1fr;
+    }
+
+    &__icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+
+      i {
+        font-size: 32px;
+        color: #fff;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: $sz-sm;
+    }
+  }
+</style>

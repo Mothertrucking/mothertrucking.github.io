@@ -1,0 +1,74 @@
+---
+interface Props {
+  theme?: 'dark' | 'light';
+}
+const { theme = 'dark' } = Astro.props;
+
+const links = [
+  { label: 'Story',     href: '/story' },
+  { label: 'Geomarqr', href: 'https://geomarqr.com', target: '_blank' },
+];
+---
+
+<nav class:list={['nav', `nav--${theme}`]}>
+  <div class="nav__inner gutter">
+    <a href="/" class="nav__logo">Mothertrucking<span>Apps</span></a>
+    <ul class="nav__links">
+      {links.map(l => (
+        <li><a href={l.href} target={l.target}>{l.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style lang="scss">
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 80;
+    backdrop-filter: blur(12px);
+
+    &--dark  { background: rgba($cl-dark-500, 0.85); }
+    &--light { background: rgba(#fff, 0.9); border-bottom: 1px solid rgba(#000, 0.07); }
+
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: $sz-md;
+    }
+
+    &__logo {
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+
+      span { color: $cl-primary-500; }
+    }
+
+    &__links {
+      list-style: none;
+      display: flex;
+      gap: $sz-xl;
+
+      @media (max-width: $bp-md) { gap: $sz-md; }
+
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        opacity: 0.75;
+        &:hover { opacity: 1; text-decoration: none; }
+      }
+    }
+
+    &--dark &__logo,
+    &--dark &__links a { color: #fff; }
+
+    &--light &__logo  { color: $cl-dark-500; }
+    &--light &__links a { color: $cl-dark-500; }
+  }
+</style>

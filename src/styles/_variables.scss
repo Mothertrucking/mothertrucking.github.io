@@ -1,0 +1,40 @@
+// ─── Colour tokens ───────────────────────────────────────────────────────────
+// Note: derived shades are plain hex (pre-computed) so this file is safe
+// to @use as additionalData in every component without sass:color conflicts.
+
+$cl-primary-500 : #FF8A00;
+$cl-primary-700 : #D97500;   // mix(#FF8A00, black, 85%)
+
+$cl-info-500    : #1490FF;
+$cl-success-500 : #1EB924;
+$cl-danger-500  : #D64C4C;
+
+$cl-text-500    : #666;
+$cl-headers-500 : #333;
+
+$cl-dark-500    : #242F35;
+$cl-dark-300    : #384650;   // mix(#242F35, white, 85%)
+$cl-dark-700    : #1E2830;   // mix(#242F35, black, 85%)
+
+$cl-gold-500    : #FFC555;
+$cl-gold-700    : #DB8E34;
+
+// ─── Spacing tokens ──────────────────────────────────────────────────────────
+
+$sz-xs  : 4px;
+$sz-sm  : 8px;
+$sz-md  : 16px;
+$sz-lg  : 24px;
+$sz-xl  : 32px;
+$sz-2xl : 64px;
+$sz-3xl : 128px;
+
+// ─── Typography ──────────────────────────────────────────────────────────────
+
+$font-display : 'Montserrat', sans-serif;
+$font-body    : 'Ubuntu', sans-serif;
+
+// ─── Breakpoints ─────────────────────────────────────────────────────────────
+
+$bp-md  : 768px;
+$bp-lg  : 1200px;
