@@ -111,7 +111,10 @@
       "Bash(cmd /c \"cd /d c:\\\\GitHub\\\\rhrn-flutter && flutter pub get 2>&1 && flutter analyze lib/ 2>&1\")",
       "WebFetch(domain:flyonui.com)",
       "WebFetch(domain:cdn.jsdelivr.net)",
-      "WebFetch(domain:mothertrucking.co.nz)"
+      "WebFetch(domain:mothertrucking.co.nz)",
+      "Bash(du -sh c:/Github/mothertrucking.github.io/public/img/*.png c:/Github/mothertrucking.github.io/public/img/*.jpg)",
+      "Bash(mkdir -p c:/Github/mothertrucking.github.io/src/assets)",
+      "Bash(mv c:/Github/mothertrucking.github.io/public/img/*.png c:/Github/mothertrucking.github.io/public/img/*.jpg c:/Github/mothertrucking.github.io/src/assets/)"
     ]
   }
 }

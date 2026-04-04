@@ -1,7 +1,25 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Button from '@components/Button.astro';
-import { ACTION_ERROR_CODES } from 'astro:actions';
+import { Image, getImage } from 'astro:assets';
+
+import heroRoadSrc     from '../assets/hero-road.jpg';
+import tidesBgSrc      from '../assets/Gemini_Generated_Image_smb6dcsmb6dcsmb6.png';
+import enterpriseBgSrc from '../assets/lcnzOffice.png';
+import jasonSrc        from '../assets/jasonRender.png';
+import kittiSrc        from '../assets/kittiRender.png';
+import michelleSrc     from '../assets/michelleRender4.png';
+import mysterySrc      from '../assets/mentorRender2.png';
+
+const [heroRoad, tidesBg, enterpriseBg, jasonBg, kittiBg, michelleBg, mysteryBg] = await Promise.all([
+  getImage({ src: heroRoadSrc,     format: 'webp', quality: 82 }),
+  getImage({ src: tidesBgSrc,      format: 'webp', quality: 82 }),
+  getImage({ src: enterpriseBgSrc, format: 'webp', quality: 82 }),
+  getImage({ src: jasonSrc,        format: 'webp', quality: 82 }),
+  getImage({ src: kittiSrc,        format: 'webp', quality: 82 }),
+  getImage({ src: michelleSrc,     format: 'webp', quality: 82 }),
+  getImage({ src: mysterySrc,      format: 'webp', quality: 82 }),
+]);
 
 const partners = [
   'Siemens',
@@ -20,7 +38,7 @@ const partners = [
   <!-- ─── Hero ─────────────────────────────────────────────────────────────── -->
   <section class="hero">
     <div class="hero__bg">
-      <img src="/img/hero-road.jpg" alt="" aria-hidden="true" />
+      <Image src={heroRoadSrc} alt="" aria-hidden="true" width={1920} height={1080} />
     </div>
     <div class="gutter hero__inner">
       <div class="hero__text">
@@ -106,7 +124,7 @@ const partners = [
   <!-- ─── Products ────────────────────────────────────────────────────────── -->
   <div class="products">
 
-    <a href="https://geomarqr.com" target="_blank" class="product product--geomarqr">
+    <a href="https://geomarqr.com" target="_blank" class="product product--geomarqr" style={`background-image: url(${heroRoad.src})`}>
       <div class="product__content">
         <span class="product__label">Live</span>
         <h2 class="product__name">Geomarqr</h2>
@@ -114,7 +132,7 @@ const partners = [
       </div>
     </a>
 
-    <div class="product product--tides">
+    <div class="product product--tides" style={`background-image: url(${tidesBg.src})`}>
       <div class="product__content">
         <span class="product__label">Coming soon to Geomarqr</span>
         <h2 class="product__name">Tides</h2>
@@ -122,7 +140,7 @@ const partners = [
       </div>
     </div>
 
-    <a href="https://lowcode.co.nz" target="_blank" class="product product--enterprise">
+    <a href="https://lowcode.co.nz" target="_blank" class="product product--enterprise" style={`background-image: url(${enterpriseBg.src})`}>
       <div class="product__content">
         <span class="product__label">Enterprise</span>
         <h2 class="product__name">lowcode.co.nz</h2>
@@ -144,7 +162,7 @@ const partners = [
 
   <div class="team">
 
-    <div class="member member--jason">
+    <div class="member member--jason" style={`--member-bg: url(${jasonBg.src})`}>
       <div class="member__icon"><i class="fa-thin fa-terminal"></i></div>
       <div class="member__content">
         <p class="member__bio">The tinkerer. The guy that gets the contraptions working. Award-winning UX and low-code leader.</p>
@@ -157,7 +175,7 @@ const partners = [
       </div>
     </div>
 
-    <div class="member member--kitti">
+    <div class="member member--kitti" style={`--member-bg: url(${kittiBg.src})`}>
       <div class="member__icon"><i class="fa-thin fa-heart"></i></div>
       <div class="member__content">
         <p class="member__bio">The heart. She talks with everyone, makes sure every voice is heard, and keeps us moving in the right direction. Award-winning startup founder.</p>
@@ -170,7 +188,7 @@ const partners = [
       </div>
     </div>
 
-    <div class="member member--michelle">
+    <div class="member member--michelle" style={`--member-bg: url(${michelleBg.src})`}>
       <div class="member__icon"><i class="fa-thin fa-people-group"></i></div>
       <div class="member__content">
         <p class="member__bio">GTM strategist and fractional leader. She knows everyone, understands people deeply, and brings the network to match. Former Senior Director at a company acquired by Cisco for $3B.</p>
@@ -183,7 +201,7 @@ const partners = [
       </div>
     </div>
 
-    <div class="member member--mystery">
+    <div class="member member--mystery" style={`--member-bg: url(${mysteryBg.src})`}>
       <div class="member__icon"><i class="fa-thin fa-infinity"></i></div>
       <div class="member__content">
         <p class="member__bio">Mad scientist. Tinkerer. Runs a million-dollar company and still finds time to get their hands dirty. Identity stays under wraps — for now.</p>
@@ -592,17 +610,9 @@ const partners = [
 
     @media (max-width: $bp-md) { height: 30vh; }
 
-    &--geomarqr {
-      background-image: url('/img/hero-road.jpg');
-    }
-
-    &--tides {
-      background-image: url('/img/Gemini_Generated_Image_smb6dcsmb6dcsmb6.png');
-    }
-
-    &--enterprise {
-      background-image: url('/img/lcnzOffice.png');
-    }
+    &--geomarqr {}
+    &--tides {}
+    &--enterprise {}
 
     // Dark scrim
     &::after {
@@ -719,11 +729,10 @@ const partners = [
       background: linear-gradient(to top, rgba(#000, 0.85) 0%, rgba(#000, 0.2) 60%, rgba(#000, 0.1) 100%);
     }
 
-    // Placeholder bg — replace with real photo per member
-    &--jason    { background-color: $cl-dark-700; &::before { background-image: url('/img/jasonRender.png'); } }
-    &--kitti    { background-color: $cl-dark-500; &::before { background-image: url('/img/kittiRender.png'); } }
-    &--michelle { background-color: #1a2830; &::before { background-image: url('/img/michelleRender4.png'); } }
-    &--mystery  { background-color: #111; &::before { background-image: url('/img/mentorRender2.png'); } }
+    &--jason    { background-color: $cl-dark-700; &::before { background-image: var(--member-bg); } }
+    &--kitti    { background-color: $cl-dark-500; &::before { background-image: var(--member-bg); } }
+    &--michelle { background-color: #1a2830;      &::before { background-image: var(--member-bg); } }
+    &--mystery  { background-color: #111;         &::before { background-image: var(--member-bg); } }
 
     &__icon {
       position: absolute;
